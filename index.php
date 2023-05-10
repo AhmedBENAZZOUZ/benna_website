@@ -551,8 +551,8 @@ if (isset($_SESSION['id'])) {
                     <br />
                     <div class="row gy-4">
                       <div class="form-group col-lg-12 col-md-6">
-                        <label for="exampleFormControlTextarea1">Ingredients and quantity : </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        <label >Ingredients and quantity : </label>
+                        <textarea class="form-control" rows="3"
                           name="ingredients"></textarea>
                         <br />
                         <!-- <table id="myTable" style="display:none;">
@@ -575,9 +575,9 @@ if (isset($_SESSION['id'])) {
                       </div>
                     </div>
                     <div class="row gy-4" id="lk">
-                      <div class="form-group col-lg-8 col-md-6">
+                      <div class="form-group col-lg-12 col-md-6">
                         <label for="instructions">Les Instructions : </label>
-                        <input type="text" class="form-control" id="in" name="instructions" />
+                        <textarea name="instructions" id="instructions" cols="30" rows="10" class="form-control"></textarea>
                       </div>
                       <!-- <div class="form-group col-lg-4 col-md-6">
                         <br />

@@ -12,18 +12,20 @@ $select_profile = mysqli_query($con, $query);
 $fetch_profile = mysqli_fetch_assoc($select_profile);
 $email_user = $fetch_profile['email'];
 
-if (!isset($user_id)) {
-    header('location:../auth/Auth.php');
-}
-if (isset($_POST['submit'])) {
-    $subject = $_POST['subject'];
+if (isset($user_id)) {
 
-    $message = $_POST['message'];
-    $query_feed = "insert into feedback values (NULL,'$subject','$message','$email_user');";
-    $feedback = mysqli_query($con, $query_feed);
-    if ($feedback) {
-        header('location:../index.php');
+    if (isset($_POST['submit'])) {
+
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        $query_feed = "insert into feedback values (NULL,'$subject','$message','$email_user');";
+        $feedback = mysqli_query($con, $query_feed);
+        if ($feedback) {
+            header('location:../index.php');
+        }
+
     }
 
-
+} else {
+    header('location:../auth/Auth.php');
 }
